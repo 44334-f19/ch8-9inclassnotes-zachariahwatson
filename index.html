@@ -1,13 +1,156 @@
 <!DOCTYPE html> 
 <html lang="en"> 
 	<head> 
-		<title>LASTNAME Chapter8-9InClassNotes</title> 
+		<title>Watson Chapter8-9InClassNotes</title> 
 		<meta charset="utf-8"> 
 		<style>
-		
+            table {
+                margin: auto;
+                border: 5px solid #000;
+                border-spacing: 0px;
+            }
+            td, th {
+                padding: 0.5em;
+            }
+            caption {
+                font-size: 1.2em;
+            }
+            #wrapper {
+                display: flex;
+                flex-direction: row;
+            }
+            form {
+                background-color: #eaeaea;
+                font-family: Arial, sans-serif;
+                padding: 10px;
+                min-width 400px;
+            }
+            fieldset {
+                border: 2px ridge #000;
+                padding 10px;
+            }
+            label {
+                float: left;
+                width: auto;
+                text-align: right;
+                padding: 10px;
+                clear: left;
+                margin-top: 10px;
+            }
+            input, textarea {
+                margin-top: 10x;
+                display: block;
+            }
+            #stuPers {
+                flex: 2;
+            }
+            #stuInfoCol1 {
+                flex: 2;
+            }
+            #stuInfoCol2 {
+                flex: 3
+            }
+            #stuRating {
+                flex: 2;
+            }
+            input[type="radio"], input[type="checkbox"] {
+                display: inline;
+            }
 		</style>
 	</head> 
 <body> 
-
+    <h1>Student Information Table</h1>
+    <table>
+        <caption>Course Schedule</caption>
+        <thead>
+            <tr>
+                <th id="time">Time</th>
+                <th id="m">Monday</th>
+                <th id="t">Tuesday</th>
+                <th id="w">Wednesday</th>
+                <th id="tr">Thursday</th>
+                <th id="f">Friday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td headers="time">8:00-9:15am</td>
+                <td headers="m"></td>
+                <td headers="t">Chemistry</td>
+                <td headers="w"></td>
+                <td headers="tr">Chemistry</td>
+                <td headers="f"></td>
+            </tr>
+            <tr>
+                <td headers="time">9:00-9:50am</td>
+                <td headers="m">Web Dev II</td>
+                <td headers="t"></td>
+                <td headers="w">Web Dev II</td>
+                <td headers="tr"></td>
+                <td headers="f">Web Dev II</td>
+            </tr>
+            <tr>
+                <td headers="time">11:00-11:50am</td>
+                <td headers="m">Graphic Design</td>
+                <td headers="t"></td>
+                <td headers="w">Graphic Design</td>
+                <td headers="tr"></td>
+                <td headers="f">Graphic Design</td>
+            </tr>
+        </tbody>
+    </table>
+    <h1>Student Information Form</h1>
+    <p>Required Fields marked with an asterisk *</p>
+    <form method="post" action="http://webdevbasics.net/scripts/demo.php">
+        <div id="wrapper">
+            <fieldset id="stuPers">
+                <label for="myName">*Name:</label>
+                <input type="text" name="myName" id="myName" required="required" placeholder="your fist and last name">
+                <label for="myName">*Address:</label>
+                <input type="text" name="myAdress" id="myAddress" required="required" placeholder="your adress">
+                <label for="myEmail">*Email:</label>
+                <input type="text" name="myEmail" id="myEmail" required="required" placeholder="your email">
+                <label for="myUsername">*Username:</label>
+                <input type="text" name="myUsername" id="myEmail" required="required" placeholder="your username">
+                <label for="myPassword">*Password:</label>
+                <input type="text" name="myPassword" id="myPassword" required="required" placeholder="your Password">
+            </fieldset>
+            <fieldset id="stuInfoCol1">
+                <legend>Student Information</legend>
+                Select Status:<br>
+                <input type="radio" name="myStatus" id="GS" value="Graduate Student">Graduate Student<br>
+                <input type="radio" name="myStatus" id="S" value="Senior">Senior<br>
+                <input type="radio" name="myStatus" id="J" value="Junior">Junior<br>
+                <input type="radio" name="myStatus" id="So" value="Sophomore">Sophomore<br>
+                <input type="radio" name="myStatus" id="F" value="Freshman">Freshman<br><br>
+                
+                Select Organizations:<br>
+                <input type="checkbox" name="myOrg" id="acm" value="ACM">ACM<br>
+                <input type="checkbox" name="myOrg" id="adink" value="adink">adink<br>
+                <input type="checkbox" name="myOrg" id="s" value="sorority">sorority<br>
+                <input type="checkbox" name="myOrg" id="f" value="fraternity">fraternity<br>
+                <input type="checkbox" name="myOrg" id="o" value="other">other<br>
+            </fieldset>
+            <fieldset id="stuInfoCol2">
+                <legend>Campus</legend>
+                Do you live on campus: <br>
+                <select size="1" name="campus" id="campus">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+                
+                <label for="moveInDate">Coose a move in date</label>
+                <input type="date" name="moveInDate" id="myDate">
+            </fieldset>
+            <fieldset id="stuRating">
+                <legend>Student Rating</legend>
+                <label for="myRating">How would you rate NW: ((1) bad - (10) good):</label>
+                <input type="range" name="myRating" id="myRating" min="1" max="10">
+                <label for="myComments">*Comments</label>
+                <textarea name="myComments" id="myComments" rows="2" cols="20" required="required"></textarea>
+                <input id="mySubmit" type="submit" value="Submit">
+            </fieldset>
+        </div>
+    </form>
 </body> 
 </html> 
